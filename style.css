@@ -354,5 +354,6 @@ footer > h3 {
 @media (max-width: 530px) {
   .logo {
     margin: 0;
+    height: 70px;
   }
 }
