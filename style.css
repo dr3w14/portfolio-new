@@ -467,7 +467,7 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
   .bg-cirlce {
     height: 10%;
     width: 10%;
@@ -530,6 +530,10 @@ footer {
     font-size: 2vh;
     text-wrap: wrap;
     text-align: center;
+  }
+
+  .textContainer:hover {
+    transform: scale(1);
   }
 
   .textContainer:hover::after {
