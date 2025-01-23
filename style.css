@@ -167,7 +167,11 @@ main > h2 {
   -webkit-text-fill-color: transparent;
 }
 
-.buttons > button {
+.buttons > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background-color: #3282b8;
   color: white;
@@ -180,19 +184,19 @@ main > h2 {
   box-shadow: 0px 0px 20.5px 0px rgba(0, 0, 13, 0.55) inset;
 }
 
-.buttons > button:last-child {
+.buttons > a:last-child {
   background-color: transparent;
   border: 1px solid #3282b8;
   box-shadow: none;
 }
 
-.buttons > button:hover:first-child {
+.buttons > a:hover:first-child {
   transform: scale(1.1);
   background-color: white;
   color: black;
 }
 
-.buttons > button:hover:last-child {
+.buttons > a:hover:last-child {
   transform: scale(1.1);
   border: none;
   background-color: white;
@@ -394,6 +398,86 @@ footer {
   line-height: normal;
 }
 
+/* CONTACT ME */
+
+.contactUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  animation: fadeIn 1s;
+}
+
+.contactUp > .fancyText > .fancyLine {
+  width: 50px;
+}
+
+.contactUp > h3 {
+  font-size: 16px;
+  font-family: "Nunito Sans";
+  background: linear-gradient(90deg, #fff 30%, #bbe1fa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40vh;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 1s;
+}
+
+.form > input {
+  background-color: transparent;
+  border: 1px solid #d4d4d440;
+  border-radius: 4px;
+  width: 370px;
+  height: 35px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #fff;
+}
+
+.form > input:focus {
+  outline: none;
+  border: 1px solid #3282b8;
+  background-color: #1b262c30;
+  transform: scale(1.1);
+}
+
+.form > button {
+  border: none;
+  background-color: #3282b8;
+  color: white;
+  font-family: "Nunito Sans";
+  width: 110px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0px 0px 20.5px 0px rgba(0, 0, 13, 0.55) inset;
+  margin-left: -275px;
+}
+
+.form > button:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+}
+
+.form > #message {
+  display: flex;
+  flex-wrap: wrap;
+  height: 125px;
+  text-wrap: wrap;
+}
+
 @keyframes businessmanAnim {
   from {
     top: 180px;
@@ -492,6 +576,23 @@ footer {
   .hero > h1,
   h2 {
     font-size: 100%;
+  }
+
+  .contactUp > h3 {
+    text-wrap: wrap;
+    text-align: center;
+  }
+
+  .form > input {
+    width: 80%;
+  }
+
+  .form > button {
+    margin: 0;
+  }
+
+  .form > input:focus {
+    transform: none;
   }
 }
 
