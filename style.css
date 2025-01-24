@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -41,9 +43,9 @@ body {
 /* HOME */
 
 header {
+  position: relative;
   margin-top: 50px;
   width: 100%;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +150,7 @@ main > h2 {
   overflow: hidden;
 }
 
-.businessMan > img {
+.businessMan > svg {
   position: relative;
   animation: businessmanAnim 1s ease-in-out;
 }
@@ -425,15 +427,20 @@ footer {
 
 .form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 40vh;
   justify-content: center;
-  gap: 1rem;
+  margin-top: 3rem;
   animation: fadeIn 1s;
 }
 
-.form > input {
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formContainer > input,
+textarea {
   background-color: transparent;
   border: 1px solid #d4d4d440;
   border-radius: 4px;
@@ -441,17 +448,36 @@ footer {
   height: 35px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  font-family: "Nunito Sans";
   color: #fff;
 }
 
-.form > input:focus {
+.formContainer > input:focus,
+textarea:focus {
   outline: none;
   border: 1px solid #3282b8;
-  background-color: #1b262c30;
+  background-color: #1b262c60;
   transform: scale(1.1);
 }
 
-.form > button {
+.formContainer > textarea {
+  padding-top: 1rem;
+  resize: none;
+}
+
+.formContainer > textarea::-webkit-scrollbar {
+  width: 7px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.formContainer > textarea::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: #3282b8;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.formContainer > button {
   border: none;
   background-color: #3282b8;
   color: white;
@@ -462,20 +488,53 @@ footer {
   font-size: 12px;
   cursor: pointer;
   box-shadow: 0px 0px 20.5px 0px rgba(0, 0, 13, 0.55) inset;
-  margin-left: -275px;
 }
 
-.form > button:hover {
+.formContainer > button:hover {
   transform: scale(1.1);
   background-color: white;
   color: black;
 }
 
-.form > #message {
+.formContainer > #message {
   display: flex;
   flex-wrap: wrap;
   height: 125px;
   text-wrap: wrap;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.contactInfo > .social {
+  padding-bottom: 1rem;
+}
+
+.info {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.info > .infoItem > h3 {
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  user-select: text;
+}
+
+.info > .infoItem {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.info > .infoItem::selection {
+  background-color: #1b262c;
 }
 
 @keyframes businessmanAnim {
@@ -551,6 +610,13 @@ footer {
   }
 }
 
+@media (max-width: 700px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media (max-width: 560px) {
   .bg-cirlce {
     height: 10%;
@@ -583,15 +649,21 @@ footer {
     text-align: center;
   }
 
-  .form > input {
+  .formContainer {
     width: 80%;
   }
 
-  .form > button {
-    margin: 0;
+  .formContainer > button {
+    align-self: center;
   }
 
-  .form > input:focus {
+  .formContainer > input,
+  textarea {
+    width: 100%;
+  }
+
+  .formContainer > input:focus,
+  textarea:focus {
     transform: none;
   }
 }
